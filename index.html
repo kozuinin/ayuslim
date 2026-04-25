@@ -132,6 +132,7 @@ nav.nav .sep{
     display:block;
 }
 
+/* ★ 修正：円を中央に安定配置 */
 .circle{
     position:absolute;
     top:50%;
@@ -264,88 +265,16 @@ nav.nav .sep{
 }
 
 /* =====================
-   スマホ（ヘッダーだけ強化）
+   スマホ
 ===================== */
 @media screen and (max-width:768px){
 
-header{
-    height:auto;
-    padding:12px 15px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-/* ロゴ（大きく） */
-.logo img{
-    height:85px;
-}
-
-/* タイトル中央＆大きく */
-.header-center{
-    position:static;
-    transform:none;
-    text-align:center;
-    flex:1;
-}
-
-.header-center .main-title{
-    font-size:26px;
-}
-
-.header-center .sub-title{
-    font-size:16px;
-}
-
+/* ★ 修正：星の行を非表示 */
 .header-center .certification{
-    font-size:12px;
-}
-
-/* ハンバーガー大きく */
-.menu-btn{
-    display:block;
-    font-size:34px;
-}
-
-/* ナビ非表示 → 開いたら表示 */
-nav.nav{
     display:none;
-    position:absolute;
-    top:90px;
-    right:15px;
-    background:#fff;
-    flex-direction:column;
-    padding:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    font-size:18px;
 }
 
-nav.nav.active{
-    display:flex;
-}
-
-nav.nav a{
-    padding:10px 0;
-}
-
-/* 元のスマホレイアウト（触ってない） */
-.section{
-    padding:140px 15px 60px;
-}
-
-.hero{
-    flex-direction:column;
-}
-
-.hero-images{
-    flex-direction:column;
-}
-
-.hero-images img{
-    width:100%;
-    height:auto;
-}
-
+/* ★ 修正：円を下にずらして崩れ防止 */
 .circle{
     position:static;
     transform:none;
@@ -353,32 +282,6 @@ nav.nav a{
     width:200px;
     height:200px;
     font-size:20px;
-}
-
-.concept{
-    flex-direction:column;
-    gap:30px;
-    padding:0 15px;
-}
-
-.concept img{
-    width:100%;
-    height:auto;
-}
-
-.concept p{
-    width:100%;
-    font-size:15px;
-}
-
-.footer-reservation .container{
-    flex-direction:column;
-    gap:40px;
-    padding:0 20px;
-}
-
-.footer-right button{
-    width:100%;
 }
 
 }
@@ -400,12 +303,10 @@ nav.nav a{
         <div class="certification">☆★ 日本WEC認定･バザルトストーンサロン★☆</div>
     </div>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
     <nav class="nav">
-        <a href="#" onclick="toggleMenu()">TOP</a>
-        <a href="#" onclick="toggleMenu()">CONCEPT</a>
-        <a href="#" onclick="toggleMenu()">MENU</a>
+        <a href="#">TOP</a><span class="sep">/</span>
+        <a href="#">CONCEPT</a><span class="sep">/</span>
+        <a href="#">MENU</a>
     </nav>
 
 </header>
@@ -444,13 +345,18 @@ nav.nav a{
 </section>
 
 <section class="footer-reservation">
+
   <div class="container">
 
     <div class="footer-left">
+
       <img src="./images/logo2.jpg">
+
       <h2>AYU SLIM</h2>
+
       <p>Beauty Salon 痩身 小顔</p>
       <p>営業時間 10:00 - 22:30</p>
+
       <p>〒133-0056</p>
 
       <p class="address">
@@ -459,6 +365,7 @@ nav.nav a{
       </p>
 
       <p class="map"><a href="#">Google Map</a></p>
+
     </div>
 
     <div class="footer-center">
@@ -469,20 +376,20 @@ nav.nav a{
     </div>
 
     <div class="footer-right">
+
       <h2>RESERVATION</h2>
+
       <p class="reserve-label">ご予約</p>
+
       <a class="tel" href="tel:08040842288">080-4084-2288</a>
+
       <button>WEB予約</button>
+
     </div>
 
   </div>
-</section>
 
-<script>
-function toggleMenu(){
-    document.querySelector(".nav").classList.toggle("active");
-}
-</script>
+</section>
 
 </body>
 </html>
