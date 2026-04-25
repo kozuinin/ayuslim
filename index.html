@@ -21,7 +21,9 @@ body{
     color:#2f2f2f;
 }
 
-/* ヘッダー */
+/* =====================
+   ヘッダー
+===================== */
 header{
     position:fixed;
     top:0;
@@ -37,6 +39,7 @@ header{
 
 .logo img{
     height:125px;
+    width:auto;
 }
 
 .header-center{
@@ -44,35 +47,53 @@ header{
     left:16.5%;
     top:50%;
     transform:translateY(-50%);
+    text-align:left;
 }
 
-.main-title{
+.header-center .main-title{
     font-size:33px;
     font-weight:700;
 }
 
-.sub-title{
+.header-center .sub-title{
     font-size:27px;
     font-weight:700;
+    margin-top:4px;
 }
 
-.certification{
+.header-center .certification{
     font-size:15px;
+    margin-top:6px;
 }
 
-nav{
+nav.nav{
     font-size:25px;
+    display:flex;
+    align-items:center;
 }
 
-nav a{
+nav.nav a{
     color:#444;
     text-decoration:none;
 }
 
-/* セクション */
+nav.nav .sep{
+    margin:0 12px;
+    color:#888;
+}
+
+/* =====================
+   セクション
+===================== */
 .section{
     padding:200px 20px 100px;
     text-align:center;
+}
+
+.section h2{
+    font-size:24px;
+    letter-spacing:6px;
+    color:#a8895f;
 }
 
 .line{
@@ -82,19 +103,28 @@ nav a{
     margin:35px auto 50px;
 }
 
-/* TOP */
+/* =====================
+   TOP
+===================== */
 .hero{
+    position:relative;
     display:flex;
     justify-content:center;
-    position:relative;
+    align-items:center;
 }
 
-.hero img{
+.hero-images{
+    display:flex;
+    gap:0;
+    font-size:0;
+}
+
+.hero-images img{
     height:520px;
     width:auto;
+    display:block;
 }
 
-/* 丸テキスト */
 .circle{
     position:absolute;
     top:50%;
@@ -102,56 +132,140 @@ nav a{
     transform:translate(-50%,-50%);
     width:320px;
     height:320px;
-    border-radius:50%;
+
     background:rgba(255,250,205,0.3);
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+
+    border-radius:50%;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
+    font-size:46px;
+    color:#9D6C3F;
     text-align:center;
-    font-size:40px;
 }
 
-/* CONCEPT */
+/* =====================
+   CONCEPT
+===================== */
 .concept{
     display:flex;
     justify-content:center;
-    gap:80px;
+    align-items:center;
+    gap:90px;
     max-width:1100px;
     margin:auto;
 }
 
 .concept img{
     height:520px;
+    width:auto;
 }
 
 .concept p{
-    width:400px;
-    line-height:2;
-}
-
-/* フッター */
-.footer{
-    background:#2f3440;
-    color:#fff;
-    padding:100px;
-    display:flex;
-    justify-content:space-between;
+    width:420px;
+    font-size:18px;
+    line-height:2.2;
 }
 
 /* =====================
-   スマホ対応
+   FOOTER
+===================== */
+.footer-reservation{
+    background:linear-gradient(#2f3440, #262b36);
+    color:#fff;
+    padding:110px 0;
+}
+
+.footer-reservation .container{
+    display:flex;
+    max-width:1180px;
+    margin:auto;
+    gap:100px;
+    align-items:flex-start;
+}
+
+.footer-left{ flex:4; }
+
+.footer-left img{ height:90px; margin-bottom:25px; }
+
+.footer-left h2{ font-size:26px; margin-bottom:10px; }
+
+.footer-left p{
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:10px;
+}
+
+.address{ line-height:1.9; margin-bottom:12px; }
+
+.map a{ color:#fff; text-decoration:underline; }
+
+.footer-center{
+    flex:2;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:30px;
+}
+
+.footer-center a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+}
+
+.footer-right{
+    flex:4;
+}
+
+.footer-right h2{
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.reserve-label{
+    font-size:14px;
+    margin-bottom:10px;
+    opacity:0.8;
+}
+
+.tel{
+    display:block;
+    font-size:24px;
+    font-weight:700;
+    color:#fff;
+    text-decoration:none;
+    margin-bottom:35px;
+}
+
+.footer-right button{
+    width:240px;
+    height:54px;
+    background:#9D6C3F;
+    border:none;
+    color:#fff;
+    font-size:15px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.footer-right button:hover{
+    opacity:0.85;
+}
+
+/* =====================
+   スマホ対応（修正済み）
 ===================== */
 @media screen and (max-width: 768px){
 
 header{
     height:auto;
-    padding:15px;
+    padding:15px 20px;
     flex-direction:column;
     align-items:flex-start;
-}
-
-.logo img{
-    height:80px;
 }
 
 .header-center{
@@ -160,13 +274,13 @@ header{
     margin-top:10px;
 }
 
-nav{
+nav.nav{
     font-size:16px;
     margin-top:10px;
 }
 
 .section{
-    padding:120px 15px 60px;
+    padding:140px 15px 60px;
 }
 
 /* TOP */
@@ -174,11 +288,16 @@ nav{
     flex-direction:column;
 }
 
-.hero img{
+.hero-images{
+    flex-direction:column;
+}
+
+.hero-images img{
     width:100%;
     height:auto;
 }
 
+/* 丸 */
 .circle{
     position:static;
     transform:none;
@@ -191,7 +310,8 @@ nav{
 /* CONCEPT */
 .concept{
     flex-direction:column;
-    gap:20px;
+    gap:30px;
+    padding:0 15px;
 }
 
 .concept img{
@@ -201,13 +321,18 @@ nav{
 
 .concept p{
     width:100%;
+    font-size:15px;
 }
 
-/* フッター */
-.footer{
+/* FOOTER */
+.footer-reservation .container{
     flex-direction:column;
-    gap:20px;
-    padding:40px 20px;
+    gap:40px;
+    padding:0 20px;
+}
+
+.footer-right button{
+    width:100%;
 }
 
 }
@@ -218,21 +343,23 @@ nav{
 <body>
 
 <header>
+
     <div class="logo">
-        <img src="images/logo.png">
+        <img src="./images/logo.png">
     </div>
 
     <div class="header-center">
         <div class="main-title">AYU SLIM</div>
         <div class="sub-title">BEAUTY SALON 痩身 小顔</div>
-        <div class="certification">日本WEC認定</div>
+        <div class="certification">☆★ 日本WEC認定･バザルトストーンサロン★☆</div>
     </div>
 
-    <nav>
-        <a href="#">TOP</a> /
-        <a href="#">CONCEPT</a> /
+    <nav class="nav">
+        <a href="#">TOP</a><span class="sep">/</span>
+        <a href="#">CONCEPT</a><span class="sep">/</span>
         <a href="#">MENU</a>
     </nav>
+
 </header>
 
 <section class="section">
@@ -240,8 +367,10 @@ nav{
     <div class="line"></div>
 
     <div class="hero">
-        <img src="images/top1.jpg">
-        <img src="images/top2.jpg">
+        <div class="hero-images">
+            <img src="./images/top1.jpg">
+            <img src="./images/top2.jpg">
+        </div>
 
         <div class="circle">
             内側から輝く<br>
@@ -256,7 +385,7 @@ nav{
     <div class="line"></div>
 
     <div class="concept">
-        <img src="images/room.jpg">
+        <img src="./images/room.jpg">
 
         <p>
             小岩では珍しいバザルトストーン専門サロン。純金製痩身マシンTBS導入で、内側から美バスト・美ボディへ導きます。<br><br>
@@ -266,16 +395,52 @@ nav{
     </div>
 </section>
 
-<footer class="footer">
-    <div>
-        <img src="images/logo2.jpg" height="80">
-        <p>Beauty Salon 痩身 小顔</p>
+<section class="footer-reservation">
+
+  <div class="container">
+
+    <div class="footer-left">
+
+      <img src="./images/logo2.jpg">
+
+      <h2>AYU SLIM</h2>
+
+      <p>Beauty Salon 痩身 小顔</p>
+      <p>営業時間 10:00 - 22:30</p>
+
+      <p>〒133-0056</p>
+
+      <p class="address">
+        東京都江戸川区南小岩7丁目26-21<br>
+        ペガサス・ステーション・プラザ小岩
+      </p>
+
+      <p class="map"><a href="#">Google Map</a></p>
+
     </div>
 
-    <div>
-        <p>080-4084-2288</p>
+    <div class="footer-center">
+      <a href="#">TOP</a>
+      <a href="#">CONCEPT</a>
+      <a href="#">MENU</a>
+      <a href="#">RESULT</a>
     </div>
-</footer>
+
+    <div class="footer-right">
+
+      <h2>RESERVATION</h2>
+
+      <p class="reserve-label">ご予約</p>
+
+      <a class="tel" href="tel:08040842288">080-4084-2288</a>
+
+      <button>WEB予約</button>
+
+    </div>
+
+  </div>
+
+</section>
 
 </body>
 </html>
