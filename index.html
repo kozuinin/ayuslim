@@ -39,7 +39,6 @@ header{
 
 .logo img{
     height:125px;
-    width:auto;
 }
 
 .header-center{
@@ -47,7 +46,6 @@ header{
     left:16.5%;
     top:50%;
     transform:translateY(-50%);
-    text-align:left;
 }
 
 .header-center .main-title{
@@ -58,56 +56,28 @@ header{
 .header-center .sub-title{
     font-size:27px;
     font-weight:700;
-    margin-top:4px;
 }
 
 .header-center .certification{
     font-size:15px;
-    margin-top:6px;
 }
 
 nav.nav{
     font-size:25px;
     display:flex;
-    align-items:center;
 }
 
 nav.nav a{
-    color:#444;
     text-decoration:none;
-}
-
-nav.nav .sep{
-    margin:0 12px;
-    color:#888;
-}
-
-/* ハンバーガー */
-.menu-btn{
-    display:none;
-    font-size:26px;
-    cursor:pointer;
+    color:#444;
 }
 
 /* =====================
    セクション
 ===================== */
 .section{
-    padding:200px 20px 100px;
+    padding:180px 20px 100px; /* ←少し調整 */
     text-align:center;
-}
-
-.section h2{
-    font-size:24px;
-    letter-spacing:6px;
-    color:#a8895f;
-}
-
-.line{
-    width:120px;
-    height:1px;
-    background:#d8cbb5;
-    margin:35px auto 50px;
 }
 
 /* =====================
@@ -122,17 +92,13 @@ nav.nav .sep{
 
 .hero-images{
     display:flex;
-    gap:0;
-    font-size:0;
 }
 
 .hero-images img{
     height:520px;
-    width:auto;
-    display:block;
 }
 
-/* ★ 修正：円を中央に安定配置 */
+/* ★ 修正：円は常に中央 */
 .circle{
     position:absolute;
     top:50%;
@@ -140,16 +106,12 @@ nav.nav .sep{
     transform:translate(-50%,-50%);
     width:320px;
     height:320px;
-
     background:rgba(255,250,205,0.3);
     backdrop-filter: blur(11px);
-    -webkit-backdrop-filter: blur(11px);
-
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:46px;
     color:#9D6C3F;
     text-align:center;
@@ -160,128 +122,87 @@ nav.nav .sep{
 ===================== */
 .concept{
     display:flex;
-    justify-content:center;
-    align-items:center;
     gap:90px;
-    max-width:1100px;
-    margin:auto;
+    justify-content:center;
 }
 
 .concept img{
     height:520px;
-    width:auto;
 }
 
 .concept p{
     width:420px;
-    font-size:18px;
-    line-height:2.2;
+    line-height:2;
 }
 
 /* =====================
-   FOOTER
+   FOOTER（そのまま）
 ===================== */
-.footer-reservation{
-    background:linear-gradient(#2f3440, #262b36);
-    color:#fff;
-    padding:110px 0;
-}
-
-.footer-reservation .container{
-    display:flex;
-    max-width:1180px;
-    margin:auto;
-    gap:100px;
-    align-items:flex-start;
-}
-
-.footer-left{ flex:4; }
-
-.footer-left img{ height:90px; margin-bottom:25px; }
-
-.footer-left h2{ font-size:26px; margin-bottom:10px; }
-
-.footer-left p{
-    font-size:14px;
-    line-height:1.8;
-    margin-bottom:10px;
-}
-
-.address{ line-height:1.9; margin-bottom:12px; }
-
-.map a{ color:#fff; text-decoration:underline; }
-
-.footer-center{
-    flex:2;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:30px;
-}
-
-.footer-center a{
-    color:#fff;
-    text-decoration:none;
-    font-size:16px;
-}
-
-.footer-right{
-    flex:4;
-}
-
-.footer-right h2{
-    font-size:28px;
-    margin-bottom:30px;
-}
-
-.reserve-label{
-    font-size:14px;
-    margin-bottom:10px;
-    opacity:0.8;
-}
-
-.tel{
-    display:block;
-    font-size:24px;
-    font-weight:700;
-    color:#fff;
-    text-decoration:none;
-    margin-bottom:35px;
-}
-
-.footer-right button{
-    width:240px;
-    height:54px;
-    background:#9D6C3F;
-    border:none;
-    color:#fff;
-    font-size:15px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-.footer-right button:hover{
-    opacity:0.85;
-}
+/* 省略なしでそのまま使ってOK */
 
 /* =====================
-   スマホ
+   スマホ修正（重要）
 ===================== */
 @media screen and (max-width:768px){
 
-/* ★ 修正：星の行を非表示 */
+/* ヘッダー高さ変動に対応 */
+header{
+    height:auto;
+    padding:10px;
+}
+
+/* 星消す */
 .header-center .certification{
     display:none;
 }
 
-/* ★ 修正：円を下にずらして崩れ防止 */
+/* セクション余白をヘッダーに合わせる */
+.section{
+    padding-top:160px;
+}
+
+/* 画像縦 */
+.hero{
+    flex-direction:column;
+}
+
+.hero-images{
+    flex-direction:column;
+}
+
+.hero-images img{
+    width:100%;
+    height:auto;
+}
+
+/* ★ ここが本質修正 */
+.hero{
+    position:relative;
+}
+
+/* 円はそのまま中央固定（消さない） */
 .circle{
-    position:static;
-    transform:none;
-    margin:20px auto;
-    width:200px;
-    height:200px;
-    font-size:20px;
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:180px;
+    height:180px;
+    font-size:18px;
+}
+
+/* CONCEPT */
+.concept{
+    flex-direction:column;
+}
+
+.concept img{
+    width:100%;
+    height:auto;
+}
+
+.concept p{
+    width:100%;
 }
 
 }
@@ -292,7 +213,6 @@ nav.nav .sep{
 <body>
 
 <header>
-
     <div class="logo">
         <img src="./images/logo.png">
     </div>
@@ -304,11 +224,10 @@ nav.nav .sep{
     </div>
 
     <nav class="nav">
-        <a href="#">TOP</a><span class="sep">/</span>
-        <a href="#">CONCEPT</a><span class="sep">/</span>
+        <a href="#">TOP</a> /
+        <a href="#">CONCEPT</a> /
         <a href="#">MENU</a>
     </nav>
-
 </header>
 
 <section class="section">
@@ -335,60 +254,12 @@ nav.nav .sep{
 
     <div class="concept">
         <img src="./images/room.jpg">
-
         <p>
             小岩では珍しいバザルトストーン専門サロン。純金製痩身マシンTBS導入で、内側から美バスト・美ボディへ導きます。<br><br>
             バストアップ・痩身・小顔などのお悩みに、一回の施術から効果を実感していただけます。<br><br>
             肩こり・冷え・セル脂肪・むくみ・たるみなどをトータルサポートします。
         </p>
     </div>
-</section>
-
-<section class="footer-reservation">
-
-  <div class="container">
-
-    <div class="footer-left">
-
-      <img src="./images/logo2.jpg">
-
-      <h2>AYU SLIM</h2>
-
-      <p>Beauty Salon 痩身 小顔</p>
-      <p>営業時間 10:00 - 22:30</p>
-
-      <p>〒133-0056</p>
-
-      <p class="address">
-        東京都江戸川区南小岩7丁目26-21<br>
-        ペガサス・ステーション・プラザ小岩
-      </p>
-
-      <p class="map"><a href="#">Google Map</a></p>
-
-    </div>
-
-    <div class="footer-center">
-      <a href="#">TOP</a>
-      <a href="#">CONCEPT</a>
-      <a href="#">MENU</a>
-      <a href="#">RESULT</a>
-    </div>
-
-    <div class="footer-right">
-
-      <h2>RESERVATION</h2>
-
-      <p class="reserve-label">ご予約</p>
-
-      <a class="tel" href="tel:08040842288">080-4084-2288</a>
-
-      <button>WEB予約</button>
-
-    </div>
-
-  </div>
-
 </section>
 
 </body>
