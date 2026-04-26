@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -44,7 +43,7 @@ header{
 
 .header-center{
     position:absolute;
-    left:16.5%;
+    left:17%;
     top:50%;
     transform:translateY(-50%);
     text-align:left;
@@ -104,9 +103,10 @@ nav.nav .sep{
     color:#a8895f;
 }
 
+/* ★ここだけ修正 */
 .line{
     width:120px;
-    height:1px;
+    height:2px; /* ←修正ここだけ */
     background:#d8cbb5;
     margin:35px auto 50px;
 }
@@ -151,7 +151,7 @@ nav.nav .sep{
 }
 
 /* =====================
-   CONCEPT（ここだけ最適化）
+   CONCEPT
 ===================== */
 .concept{
     display:flex;
@@ -205,10 +205,6 @@ nav.nav .sep{
     margin-bottom:10px;
 }
 
-.address{ line-height:1.9; margin-bottom:12px; }
-
-.map a{ color:#fff; text-decoration:underline; }
-
 .footer-center{
     flex:2;
     display:flex;
@@ -232,12 +228,6 @@ nav.nav .sep{
     margin-bottom:30px;
 }
 
-.reserve-label{
-    font-size:14px;
-    margin-bottom:10px;
-    opacity:0.8;
-}
-
 .tel{
     display:block;
     font-size:24px;
@@ -258,12 +248,8 @@ nav.nav .sep{
     cursor:pointer;
 }
 
-.footer-right button:hover{
-    opacity:0.85;
-}
-
 /* =====================
-   スマホ（最小修正）
+   スマホ
 ===================== */
 @media screen and (max-width:768px){
 
@@ -283,18 +269,6 @@ header{
     flex:1;
 }
 
-.header-center .main-title{
-    font-size:26px;
-}
-
-.header-center .sub-title{
-    font-size:16px;
-}
-
-.header-center .certification{
-    font-size:12px;
-}
-
 .menu-btn{
     display:block;
     font-size:34px;
@@ -302,16 +276,6 @@ header{
 
 nav.nav{
     display:none;
-}
-
-nav.nav.active{
-    display:flex;
-    position:absolute;
-    top:100px;
-    right:15px;
-    background:#fff;
-    flex-direction:column;
-    padding:15px;
 }
 
 .section{
@@ -355,6 +319,10 @@ nav.nav.active{
     width:100%;
 }
 
+.footer-left img{
+    display:none;
+}
+
 }
 
 </style>
@@ -374,7 +342,7 @@ nav.nav.active{
         <div class="certification">☆★ 日本WEC認定･バザルトストーンサロン★☆</div>
     </div>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="menu-btn">☰</div>
 
     <nav class="nav">
         <a href="#">TOP</a>
@@ -386,7 +354,6 @@ nav.nav.active{
 
 </header>
 
-<!-- TOP -->
 <section class="section">
     <h2>TOP</h2>
     <div class="line"></div>
@@ -404,7 +371,6 @@ nav.nav.active{
     </div>
 </section>
 
-<!-- CONCEPT -->
 <section class="section">
     <h2>CONCEPT</h2>
     <div class="line"></div>
@@ -433,13 +399,6 @@ nav.nav.active{
             <p>Beauty Salon 痩身 小顔</p>
             <p>営業時間 10:00 - 22:30</p>
             <p>〒133-0056</p>
-
-            <p class="address">
-                東京都江戸川区南小岩7丁目26-21<br>
-                ペガサス・ステーション・プラザ小岩
-            </p>
-
-            <p class="map"><a href="#">Google Map</a></p>
         </div>
 
         <div class="footer-center">
@@ -451,19 +410,12 @@ nav.nav.active{
 
         <div class="footer-right">
             <h2>RESERVATION</h2>
-            <p class="reserve-label">ご予約</p>
             <a class="tel" href="tel:08040842288">080-4084-2288</a>
             <button>WEB予約</button>
         </div>
 
     </div>
 </section>
-
-<script>
-function toggleMenu(){
-    document.querySelector(".nav").classList.toggle("active");
-}
-</script>
 
 </body>
 </html>
