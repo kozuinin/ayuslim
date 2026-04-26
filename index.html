@@ -39,6 +39,7 @@ header{
 
 .logo img{
     height:125px;
+    width:auto;
 }
 
 .header-center{
@@ -46,6 +47,7 @@ header{
     left:16.5%;
     top:50%;
     transform:translateY(-50%);
+    text-align:left;
 }
 
 .header-center .main-title{
@@ -56,28 +58,49 @@ header{
 .header-center .sub-title{
     font-size:27px;
     font-weight:700;
+    margin-top:4px;
 }
 
 .header-center .certification{
     font-size:15px;
+    margin-top:6px;
 }
 
 nav.nav{
     font-size:25px;
     display:flex;
+    align-items:center;
 }
 
 nav.nav a{
-    text-decoration:none;
     color:#444;
+    text-decoration:none;
+}
+
+nav.nav .sep{
+    margin:0 12px;
+    color:#888;
 }
 
 /* =====================
    セクション
 ===================== */
 .section{
-    padding:180px 20px 100px; /* ←少し調整 */
+    padding:200px 20px 100px;
     text-align:center;
+}
+
+.section h2{
+    font-size:24px;
+    letter-spacing:6px;
+    color:#a8895f;
+}
+
+.line{
+    width:120px;
+    height:1px;
+    background:#d8cbb5;
+    margin:35px auto 50px;
 }
 
 /* =====================
@@ -92,13 +115,16 @@ nav.nav a{
 
 .hero-images{
     display:flex;
+    gap:0;
+    font-size:0;
 }
 
 .hero-images img{
     height:520px;
+    width:auto;
+    display:block;
 }
 
-/* ★ 修正：円は常に中央 */
 .circle{
     position:absolute;
     top:50%;
@@ -106,161 +132,20 @@ nav.nav a{
     transform:translate(-50%,-50%);
     width:320px;
     height:320px;
+
     background:rgba(255,250,205,0.3);
     backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
+
     font-size:46px;
     color:#9D6C3F;
     text-align:center;
 }
 
 /* =====================
-   CONCEPT
-===================== */
-.concept{
-    display:flex;
-    gap:90px;
-    justify-content:center;
-}
-
-.concept img{
-    height:520px;
-}
-
-.concept p{
-    width:420px;
-    line-height:2;
-}
-
-/* =====================
-   FOOTER（そのまま）
-===================== */
-/* 省略なしでそのまま使ってOK */
-
-/* =====================
-   スマホ修正（重要）
-===================== */
-@media screen and (max-width:768px){
-
-/* ヘッダー高さ変動に対応 */
-header{
-    height:auto;
-    padding:10px;
-}
-
-/* 星消す */
-.header-center .certification{
-    display:none;
-}
-
-/* セクション余白をヘッダーに合わせる */
-.section{
-    padding-top:160px;
-}
-
-/* 画像縦 */
-.hero{
-    flex-direction:column;
-}
-
-.hero-images{
-    flex-direction:column;
-}
-
-.hero-images img{
-    width:100%;
-    height:auto;
-}
-
-/* ★ ここが本質修正 */
-.hero{
-    position:relative;
-}
-
-/* 円はそのまま中央固定（消さない） */
-.circle{
-    position:absolute;
-    top:40%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:180px;
-    height:180px;
-    font-size:18px;
-}
-
-/* CONCEPT */
-.concept{
-    flex-direction:column;
-}
-
-.concept img{
-    width:100%;
-    height:auto;
-}
-
-.concept p{
-    width:100%;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-    <div class="logo">
-        <img src="./images/logo.png">
-    </div>
-
-    <div class="header-center">
-        <div class="main-title">AYU SLIM</div>
-        <div class="sub-title">BEAUTY SALON 痩身 小顔</div>
-        <div class="certification">☆★ 日本WEC認定･バザルトストーンサロン★☆</div>
-    </div>
-
-    <nav class="nav">
-        <a href="#">TOP</a> /
-        <a href="#">CONCEPT</a> /
-        <a href="#">MENU</a>
-    </nav>
-</header>
-
-<section class="section">
-    <h2>TOP</h2>
-    <div class="line"></div>
-
-    <div class="hero">
-        <div class="hero-images">
-            <img src="./images/top1.jpg">
-            <img src="./images/top2.jpg">
-        </div>
-
-        <div class="circle">
-            内側から輝く<br>
-            自信あふれる<br>
-            理想の私へ
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>CONCEPT</h2>
-    <div class="line"></div>
-
-    <div class="concept">
-        <img src="./images/room.jpg">
-        <p>
-            小岩では珍しいバザルトストーン専門サロン。純金製痩身マシンTBS導入で、内側から美バスト・美ボディへ導きます。<br><br>
-            バストアップ・痩身・小顔などのお悩みに、一回の施術から効果を実感していただけます。<br><br>
-            肩こり・冷え・セル脂肪・むくみ・たるみなどをトータルサポートします。
-        </p>
-    </div>
-</section>
-
-</body>
-</html>
+   CON
