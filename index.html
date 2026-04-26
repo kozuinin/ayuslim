@@ -21,7 +21,7 @@ body{
 }
 
 /* =====================
-   ヘッダー（PC固定）
+   ヘッダー
 ===================== */
 header{
     position:fixed;
@@ -85,7 +85,7 @@ nav.nav .sep{
 /* ハンバーガー */
 .menu-btn{
     display:none;
-    font-size:26px;
+    font-size:34px;
     cursor:pointer;
 }
 
@@ -130,7 +130,7 @@ nav.nav .sep{
     display:block;
 }
 
-/* 円（中央維持） */
+/* 円（ここだけ修正） */
 .circle{
     position:absolute;
     top:50%;
@@ -142,12 +142,18 @@ nav.nav .sep{
     backdrop-filter: blur(11px);
     -webkit-backdrop-filter: blur(11px);
     border-radius:50%;
+
     display:flex;
     align-items:center;
     justify-content:center;
+    flex-direction:column;
+
     font-size:46px;
     color:#9D6C3F;
     text-align:center;
+
+    line-height:1.05;
+    gap:6px;
 }
 
 /* =====================
@@ -160,6 +166,7 @@ nav.nav .sep{
     gap:90px;
     max-width:1100px;
     margin:auto;
+    text-align:left;
 }
 
 .concept img{
@@ -171,8 +178,8 @@ nav.nav .sep{
 .concept p{
     width:560px;
     font-size:18px;
-    line-height:2.2;
-    margin-bottom:20px;
+    line-height:1.9;
+    margin-bottom:12px;
     text-align:left;
 }
 
@@ -205,10 +212,20 @@ nav.nav .sep{
     margin-bottom:10px;
 }
 
+/* Google Mapリンク */
+.footer-left a{
+    color:#fff;
+    display:inline-block;
+    margin-top:5px;
+    font-size:14px;
+}
+
+/* ここ修正：リンク差し替え */
 .footer-center{
     flex:2;
     display:flex;
     flex-direction:column;
+    align-items:flex-start;
     gap:30px;
 }
 
@@ -218,14 +235,9 @@ nav.nav .sep{
     font-size:16px;
 }
 
-.footer-right{
-    flex:4;
-}
+.footer-right{ flex:4; }
 
-.footer-right h2{
-    font-size:28px;
-    margin-bottom:30px;
-}
+.footer-right h2{ font-size:28px; margin-bottom:30px; }
 
 .tel{
     display:block;
@@ -248,7 +260,7 @@ nav.nav .sep{
 }
 
 /* =====================
-   スマホ（ここが修正本体）
+   スマホ
 ===================== */
 @media screen and (max-width:768px){
 
@@ -258,85 +270,56 @@ header{
 }
 
 .logo img{
-    height:90px;
+    height:85px;
 }
 
-/* 店名大きく修正 */
 .header-center{
-    position:absolute;
-    left:110px;
-    top:50%;
-    transform:translateY(-50%) scale(0.9);
-}
-
-.header-center .main-title{
-    font-size:30px;
-    font-weight:700;
-}
-
-.header-center .sub-title{
-    font-size:20px;
-}
-
-.header-center .certification{
-    font-size:12px;
-}
-
-/* ハンバーガー表示 */
-.menu-btn{
-    display:block;
-    font-size:34px;
+    position:static;
+    transform:none;
+    text-align:center;
+    flex:1;
 }
 
 nav.nav{
     display:none;
 }
 
-/* TOP画像：隙間削除＋縦並び */
+.menu-btn{
+    display:block;
+}
+
 .hero{
     flex-direction:column;
 }
 
 .hero-images{
     flex-direction:column;
-    gap:0;
 }
 
 .hero-images img{
     width:100%;
     height:auto;
-    display:block;
-    margin:0;
 }
 
-/* 円：中央維持復活 */
 .circle{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:180px;
-    height:180px;
+    position:static;
+    transform:none;
+    margin:20px auto;
+    width:200px;
+    height:200px;
     font-size:20px;
+    line-height:1.1;
 }
 
-/* CONCEPT */
 .concept{
     flex-direction:column;
 }
 
-.concept img{
-    width:100%;
-    height:auto;
-    object-fit:contain;
-    transform:none;
-}
-
+.concept img,
 .concept p{
     width:100%;
 }
 
-/* FOOTER */
 .footer-reservation .container{
     flex-direction:column;
     gap:40px;
@@ -358,7 +341,6 @@ nav.nav{
 <body>
 
 <header>
-
     <div class="logo">
         <img src="./images/logo.png">
     </div>
@@ -378,7 +360,6 @@ nav.nav{
         <span class="sep">/</span>
         <a href="#">MENU</a>
     </nav>
-
 </header>
 
 <section class="section">
@@ -393,7 +374,7 @@ nav.nav{
 
         <div class="circle">
             内側から輝く<br>
-            理想の美しさへ
+            理想の美しさ
         </div>
     </div>
 </section>
@@ -407,9 +388,12 @@ nav.nav{
 
         <div>
             <p>小岩では希少なバザルトストーン専門サロンとして、厳選された施術と先進的な痩身マシンを組み合わせ、身体の内側から本来の美しさを引き出します。</p>
-            <p>純金製痩身マシンTBSによるアプローチで、バストラインやボディラインを整えます。</p>
-            <p>バストアップ・痩身・小顔ケアなど対応します。</p>
-            <p>肩こり・冷え・むくみなどにも対応します。</p>
+
+            <p>純金製痩身マシンTBSによるアプローチで、バストラインやボディラインを整え、なめらかで美しいシルエットへと導きます。</p>
+
+            <p>バストアップ・痩身・小顔ケアなど、多様なお悩みに対して一人ひとりに合わせた施術を行い、初回から変化を感じていただけるケアを目指しています。</p>
+
+            <p>肩こりや冷え、セル脂肪、むくみ、たるみなど、日常的な不調にも総合的にアプローチします。</p>
         </div>
     </div>
 </section>
@@ -423,6 +407,11 @@ nav.nav{
             <p>Beauty Salon 痩身 小顔</p>
             <p>営業時間 10:00 - 22:30</p>
             <p>〒133-0056</p>
+
+            <!-- Google Map -->
+            <a href="https://maps.app.goo.gl/DypBMmf7UZYhAEi79" target="_blank">
+                Google Map
+            </a>
         </div>
 
         <div class="footer-center">
@@ -435,25 +424,32 @@ nav.nav{
         <div class="footer-right">
             <h2>RESERVATION</h2>
             <a class="tel" href="tel:08040842288">080-4084-2288</a>
-            <button>WEB予約</button>
+
+            <!-- WEB予約 -->
+            <a href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000457823&wak=KPCO100001_s_top_reserve_button"
+               target="_blank">
+                <button>WEB予約</button>
+            </a>
         </div>
 
     </div>
 </section>
 
 <script>
-document.querySelector(".menu-btn").addEventListener("click", function(){
-    const nav = document.querySelector("nav.nav");
+const btn = document.querySelector(".menu-btn");
+const nav = document.querySelector(".nav");
+
+btn.addEventListener("click", () => {
     if(nav.style.display === "flex"){
         nav.style.display = "none";
-    }else{
+    } else {
         nav.style.display = "flex";
         nav.style.flexDirection = "column";
+        nav.style.background = "wheat";
         nav.style.position = "absolute";
         nav.style.top = "140px";
-        nav.style.right = "15px";
-        nav.style.background = "wheat";
-        nav.style.padding = "10px";
+        nav.style.right = "0";
+        nav.style.padding = "20px";
     }
 });
 </script>
