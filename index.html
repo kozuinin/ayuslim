@@ -21,7 +21,7 @@ body{
 }
 
 /* =====================
-   ヘッダー（PC固定・変更禁止）
+   ヘッダー（PC固定）
 ===================== */
 header{
     position:fixed;
@@ -130,6 +130,7 @@ nav.nav .sep{
     display:block;
 }
 
+/* 円（中央維持） */
 .circle{
     position:absolute;
     top:50%;
@@ -208,7 +209,6 @@ nav.nav .sep{
     flex:2;
     display:flex;
     flex-direction:column;
-    align-items:flex-start;
     gap:30px;
 }
 
@@ -248,7 +248,7 @@ nav.nav .sep{
 }
 
 /* =====================
-   スマホ（ここだけ調整）
+   スマホ（ここが修正本体）
 ===================== */
 @media screen and (max-width:768px){
 
@@ -261,18 +261,28 @@ header{
     height:90px;
 }
 
-/* ヘッダー中央は“縮小のみ” */
+/* 店名大きく修正 */
 .header-center{
     position:absolute;
     left:110px;
     top:50%;
-    transform:translateY(-50%) scale(0.8);
+    transform:translateY(-50%) scale(0.9);
 }
 
-.header-center .main-title{ font-size:24px; }
-.header-center .sub-title{ font-size:18px; }
-.header-center .certification{ font-size:11px; }
+.header-center .main-title{
+    font-size:30px;
+    font-weight:700;
+}
 
+.header-center .sub-title{
+    font-size:20px;
+}
+
+.header-center .certification{
+    font-size:12px;
+}
+
+/* ハンバーガー表示 */
 .menu-btn{
     display:block;
     font-size:34px;
@@ -282,37 +292,35 @@ nav.nav{
     display:none;
 }
 
-.section{
-    padding:150px 15px 60px;
-}
-
-/* TOP：縦並び固定 */
+/* TOP画像：隙間削除＋縦並び */
 .hero{
     flex-direction:column;
 }
 
 .hero-images{
     flex-direction:column;
-    gap:15px;
-    align-items:center;
+    gap:0;
 }
 
 .hero-images img{
     width:100%;
     height:auto;
+    display:block;
+    margin:0;
 }
 
-/* 円は崩れ防止 */
+/* 円：中央維持復活 */
 .circle{
-    position:static;
-    transform:none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
     width:180px;
     height:180px;
     font-size:20px;
-    margin:15px auto;
 }
 
-/* CONCEPT：比率保持 */
+/* CONCEPT */
 .concept{
     flex-direction:column;
 }
@@ -344,7 +352,6 @@ nav.nav{
 }
 
 }
-
 </style>
 </head>
 
@@ -400,9 +407,9 @@ nav.nav{
 
         <div>
             <p>小岩では希少なバザルトストーン専門サロンとして、厳選された施術と先進的な痩身マシンを組み合わせ、身体の内側から本来の美しさを引き出します。</p>
-            <p>純金製痩身マシンTBSによるアプローチで、バストラインやボディラインを整え、なめらかで美しいシルエットへと導きます。</p>
-            <p>バストアップ・痩身・小顔ケアなど、多様なお悩みに対して一人ひとりに合わせた施術を行い、初回から変化を感じていただけるケアを目指しています。</p>
-            <p>肩こりや冷え、セル脂肪、むくみ、たるみなど、日常的な不調にも総合的にアプローチします。</p>
+            <p>純金製痩身マシンTBSによるアプローチで、バストラインやボディラインを整えます。</p>
+            <p>バストアップ・痩身・小顔ケアなど対応します。</p>
+            <p>肩こり・冷え・むくみなどにも対応します。</p>
         </div>
     </div>
 </section>
@@ -433,6 +440,23 @@ nav.nav{
 
     </div>
 </section>
+
+<script>
+document.querySelector(".menu-btn").addEventListener("click", function(){
+    const nav = document.querySelector("nav.nav");
+    if(nav.style.display === "flex"){
+        nav.style.display = "none";
+    }else{
+        nav.style.display = "flex";
+        nav.style.flexDirection = "column";
+        nav.style.position = "absolute";
+        nav.style.top = "140px";
+        nav.style.right = "15px";
+        nav.style.background = "wheat";
+        nav.style.padding = "10px";
+    }
+});
+</script>
 
 </body>
 </html>
