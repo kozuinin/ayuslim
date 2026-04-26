@@ -21,7 +21,7 @@ body{
 }
 
 /* =====================
-   ヘッダー
+   ヘッダー（PC固定・変更禁止）
 ===================== */
 header{
     position:fixed;
@@ -218,9 +218,14 @@ nav.nav .sep{
     font-size:16px;
 }
 
-.footer-right{ flex:4; }
+.footer-right{
+    flex:4;
+}
 
-.footer-right h2{ font-size:28px; margin-bottom:30px; }
+.footer-right h2{
+    font-size:28px;
+    margin-bottom:30px;
+}
 
 .tel{
     display:block;
@@ -243,7 +248,7 @@ nav.nav .sep{
 }
 
 /* =====================
-   スマホ（ここだけ修正）
+   スマホ（ここだけ調整）
 ===================== */
 @media screen and (max-width:768px){
 
@@ -252,76 +257,78 @@ header{
     padding:12px 15px;
 }
 
-/* ★ロゴ +5px */
 .logo img{
     height:90px;
 }
 
+/* ヘッダー中央は“縮小のみ” */
 .header-center{
-    position:static;
-    transform:none;
-    text-align:center;
-    flex:1;
+    position:absolute;
+    left:110px;
+    top:50%;
+    transform:translateY(-50%) scale(0.8);
+}
+
+.header-center .main-title{ font-size:24px; }
+.header-center .sub-title{ font-size:18px; }
+.header-center .certification{ font-size:11px; }
+
+.menu-btn{
+    display:block;
+    font-size:34px;
 }
 
 nav.nav{
     display:none;
 }
 
-.menu-btn{
-    display:block;
+.section{
+    padding:150px 15px 60px;
 }
 
-/* =====================
-   TOP（修正ポイント）
-===================== */
+/* TOP：縦並び固定 */
 .hero{
     flex-direction:column;
 }
 
-/* 画像を縦並び */
 .hero-images{
     flex-direction:column;
+    gap:15px;
+    align-items:center;
 }
 
-/* 画像の間隔 */
 .hero-images img{
     width:100%;
     height:auto;
 }
 
-/* ★円を「2枚の間」に見えるよう調整 */
+/* 円は崩れ防止 */
 .circle{
     position:static;
     transform:none;
     width:180px;
     height:180px;
     font-size:20px;
-    margin: -40px auto 10px auto; /* ←ここで2枚の間に食い込ませる */
-    z-index:2;
+    margin:15px auto;
 }
 
-/* =====================
-   CONCEPT（修正）
-===================== */
-.concept img{
-    width:100%;
-    height:auto;        /* 縦伸び防止 */
-    object-fit:contain; /* 比率維持 */
-    transform:none;
-}
-
+/* CONCEPT：比率保持 */
 .concept{
     flex-direction:column;
+}
+
+.concept img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    transform:none;
 }
 
 .concept p{
     width:100%;
 }
 
-/* =====================
-   FOOTER
-===================== */
+/* FOOTER */
 .footer-reservation .container{
     flex-direction:column;
     gap:40px;
@@ -337,6 +344,7 @@ nav.nav{
 }
 
 }
+
 </style>
 </head>
 
