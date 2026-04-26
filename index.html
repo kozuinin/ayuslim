@@ -103,10 +103,9 @@ nav.nav .sep{
     color:#a8895f;
 }
 
-/* ★ここだけ修正 */
 .line{
     width:120px;
-    height:2px; /* ←修正ここだけ */
+    height:2px;
     background:#d8cbb5;
     margin:35px auto 50px;
 }
@@ -219,14 +218,9 @@ nav.nav .sep{
     font-size:16px;
 }
 
-.footer-right{
-    flex:4;
-}
+.footer-right{ flex:4; }
 
-.footer-right h2{
-    font-size:28px;
-    margin-bottom:30px;
-}
+.footer-right h2{ font-size:28px; margin-bottom:30px; }
 
 .tel{
     display:block;
@@ -249,7 +243,7 @@ nav.nav .sep{
 }
 
 /* =====================
-   スマホ
+   スマホ（ここだけ修正）
 ===================== */
 @media screen and (max-width:768px){
 
@@ -258,8 +252,9 @@ header{
     padding:12px 15px;
 }
 
+/* ★ロゴ +5px */
 .logo img{
-    height:85px;
+    height:90px;
 }
 
 .header-center{
@@ -269,46 +264,64 @@ header{
     flex:1;
 }
 
-.menu-btn{
-    display:block;
-    font-size:34px;
-}
-
 nav.nav{
     display:none;
 }
 
-.section{
-    padding:150px 15px 60px;
+.menu-btn{
+    display:block;
 }
 
+/* =====================
+   TOP（修正ポイント）
+===================== */
 .hero{
     flex-direction:column;
 }
 
+/* 画像を縦並び */
+.hero-images{
+    flex-direction:column;
+}
+
+/* 画像の間隔 */
 .hero-images img{
     width:100%;
     height:auto;
 }
 
+/* ★円を「2枚の間」に見えるよう調整 */
 .circle{
     position:static;
     transform:none;
-    margin:20px auto;
-    width:200px;
-    height:200px;
+    width:180px;
+    height:180px;
     font-size:20px;
+    margin: -40px auto 10px auto; /* ←ここで2枚の間に食い込ませる */
+    z-index:2;
+}
+
+/* =====================
+   CONCEPT（修正）
+===================== */
+.concept img{
+    width:100%;
+    height:auto;        /* 縦伸び防止 */
+    object-fit:contain; /* 比率維持 */
+    transform:none;
 }
 
 .concept{
     flex-direction:column;
 }
 
-.concept img,
 .concept p{
     width:100%;
 }
 
+/* =====================
+   FOOTER
+===================== */
 .footer-reservation .container{
     flex-direction:column;
     gap:40px;
@@ -324,7 +337,6 @@ nav.nav{
 }
 
 }
-
 </style>
 </head>
 
@@ -380,11 +392,8 @@ nav.nav{
 
         <div>
             <p>小岩では希少なバザルトストーン専門サロンとして、厳選された施術と先進的な痩身マシンを組み合わせ、身体の内側から本来の美しさを引き出します。</p>
-
             <p>純金製痩身マシンTBSによるアプローチで、バストラインやボディラインを整え、なめらかで美しいシルエットへと導きます。</p>
-
             <p>バストアップ・痩身・小顔ケアなど、多様なお悩みに対して一人ひとりに合わせた施術を行い、初回から変化を感じていただけるケアを目指しています。</p>
-
             <p>肩こりや冷え、セル脂肪、むくみ、たるみなど、日常的な不調にも総合的にアプローチします。</p>
         </div>
     </div>
@@ -419,3 +428,4 @@ nav.nav{
 
 </body>
 </html>
+
