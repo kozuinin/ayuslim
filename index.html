@@ -34,6 +34,7 @@ header{
     align-items:center;
     background:wheat;
     z-index:1000;
+    flex-wrap:wrap;
 }
 
 .logo img{
@@ -130,7 +131,7 @@ nav.nav .sep{
     display:block;
 }
 
-/* 円（ここだけ修正） */
+/* 円 */
 .circle{
     position:absolute;
     top:50%;
@@ -212,7 +213,6 @@ nav.nav .sep{
     margin-bottom:10px;
 }
 
-/* Google Mapリンク */
 .footer-left a{
     color:#fff;
     display:inline-block;
@@ -220,7 +220,6 @@ nav.nav .sep{
     font-size:14px;
 }
 
-/* ここ修正：リンク差し替え */
 .footer-center{
     flex:2;
     display:flex;
@@ -288,8 +287,10 @@ nav.nav{
     display:block;
 }
 
+/* TOP修正：2画像の中央に円 */
 .hero{
     flex-direction:column;
+    position:relative;
 }
 
 .hero-images{
@@ -301,25 +302,36 @@ nav.nav{
     height:auto;
 }
 
+/* 円を中央に固定（上下画像の真ん中） */
 .circle{
-    position:static;
-    transform:none;
-    margin:20px auto;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
     width:200px;
     height:200px;
     font-size:20px;
     line-height:1.1;
 }
 
+/* CONCEPT画像崩れ防止 */
+.concept img{
+    width:100%;
+    height:auto;
+    transform:none;
+    object-fit:contain;
+}
+
+/* レイアウト縦並び */
 .concept{
     flex-direction:column;
 }
 
-.concept img,
 .concept p{
     width:100%;
 }
 
+/* フッター */
 .footer-reservation .container{
     flex-direction:column;
     gap:40px;
@@ -408,7 +420,6 @@ nav.nav{
             <p>営業時間 10:00 - 22:30</p>
             <p>〒133-0056</p>
 
-            <!-- Google Map -->
             <a href="https://maps.app.goo.gl/DypBMmf7UZYhAEi79" target="_blank">
                 Google Map
             </a>
@@ -425,7 +436,6 @@ nav.nav{
             <h2>RESERVATION</h2>
             <a class="tel" href="tel:08040842288">080-4084-2288</a>
 
-            <!-- WEB予約 -->
             <a href="https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000457823&wak=KPCO100001_s_top_reserve_button"
                target="_blank">
                 <button>WEB予約</button>
